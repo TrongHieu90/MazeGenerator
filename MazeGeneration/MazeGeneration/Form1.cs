@@ -292,5 +292,15 @@ namespace MazeGeneration
                 }
             }
         }
+        
+        #region extra
+        //suppressing the alt button causing the form to be redrawn
+        protected override void WndProc(ref Message m)
+        {
+            // Suppress the WM_UPDATEUISTATE message
+            if (m.Msg == 0x128) return;
+            base.WndProc(ref m);
+        }
+        #endregion
     }
 }
