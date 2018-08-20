@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -252,6 +252,17 @@ namespace MazeGeneration
                     DrawGrid();
                 }             
             }
+
+            else
+            {
+                string message = "Please Enter an Integer number.";
+                string caption = "Error Detected in Input";
+
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                DialogResult result;
+
+                result = MessageBox.Show(message, caption, buttons);
+            }
         }
 
         private void DrawGrid()
@@ -292,7 +303,7 @@ namespace MazeGeneration
                 }
             }
         }
-        
+
         #region extra
         //suppressing the alt button causing the form to be redrawn
         protected override void WndProc(ref Message m)
